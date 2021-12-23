@@ -24,7 +24,8 @@ app.post('/addRequest', async (req, res) => {
 
     const request = await collection.insertOne({
         clientName,
-        time: new Date().toISOString()
+        time: new Date().toISOString(),
+        status: 'REQUESTED',
     })
 
     res.json(request)
